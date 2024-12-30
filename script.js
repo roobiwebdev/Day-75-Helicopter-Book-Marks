@@ -1,6 +1,6 @@
 window.onload = () => {
   document.querySelector(".loading-wrapper").classList.add("hidden");
-  document.body.classList.remove("overflow-hidden");
+  document.body.classList.remove("overflow-y-hidden");
 };
 
 const menu = document.querySelector("#menu");
