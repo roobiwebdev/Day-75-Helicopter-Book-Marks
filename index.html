@@ -18,15 +18,9 @@
     <link rel="stylesheet" href="style.css" />
     <title>SKYLUXE</title>
   </head>
-  <body class="bg-[#0B0B0B] select-none w-full relative text-white overflow-y-hidden">
-     <div class="absolute z-50 w-full h-screen bg-[#0B0B0B] loading-wrapper">
-      <div
-        class="z-10 h-screen w-full flex justify-center items-center fixed top-0"
-      >
-        <div class="loader"></div>
-      </div>
-    </div>
-
+  <body
+    class="bg-[#0B0B0B] w-full select-none relative text-white overflow-y-hidden"
+  >
     <header class="relative min-h-screen">
       <div
         class="absolute top-0 left-0 right-0 -z-10 w-full h-screen header_img"
@@ -181,9 +175,9 @@
                 placeholder="Message..."
               ></textarea>
               <div class="chat-controls">
-                <!-- <button id="emoji-picker">
+                <button id="emoji-picker">
                   <i class="ri-user-smile-line" id="emoji-picker"></i>
-                </button> -->
+                </button>
 
                 <div class="file-upload-wrapper">
                   <input type="file" accept="images/*" id="file-input" hidden />
@@ -206,9 +200,9 @@
       </div>
     </header>
 
-    <div class="h-12 bg-[#0B0B0B] z-10 -mt-10 shado"></div>
+    <div class="h-12 bg-[#0B0B0B] w-auto z-10 -mt-10 shado"></div>
 
-    <main class="mt-20 shadow-2xl">
+    <main class="mt-20 overflow-hidden w-full shadow-2xl">
       <section
         class="min-h-screen flex flex-col justify-center items-center w-full"
       >
@@ -439,7 +433,9 @@
         </div>
       </section>
 
-      <section class="min-h-screen flex flex-col justify-center items-center">
+      <section
+        class="w-11/12 overflow-hidden min-h-screen flex flex-col justify-center items-center"
+      >
         <div class="left_data w-full relative">
           <img
             src="assets/helicopter_flying_city_sunset_perfect_travel_transportation_concepts.jpg"
