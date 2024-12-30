@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
+
+    <link rel="icon" href="assets/fav-icon.png" type="png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SKYLUXE</title>
+  </head>
+  <body class="bg-[#0B0B0B] relative text-white overflow-hidden">
+    <div
+      class="z-50 h-screen w-full flex justify-center items-center bg-[#0B0B0B] fixed top-0 loading-wrapper"
+    >
+      <div class="loader w-40">
+        <img src="assets/Untitled design.gif" alt="" />
+      </div>
+    </div>
+
+    <header class="relative min-h-screen">
+      <div
+        class="absolute top-0 left-0 right-0 -z-10 w-full h-screen header_img"
+      >
+        <img
+          src="assets/header.webp"
+          alt=""
+          class="w-full h-screen object-cover"
+        />
+      </div>
+
+      <nav
+        class="nav_data w-full px-5 pt-3 mx-auto flex relative justify-between items-center md:border-b md:pb-4 md:border-gray-600 md:shadow-lg"
+      >
+        <div
+          class="w-full absolute top-0 left-[-100%] right-0 h-[60vh] flex flex-col text-center justify-center items-center border duration-500 md:flex-row md:left-0 md:h-auto md:relative md:justify-between md:w-1/3 z-20 glass"
+          id="nav-bar"
+        >
+          <ul class="flex flex-col gap-4 md:flex-row md:gap-6 lg:gap-8">
+            <li class="nav-link">About</li>
+            <li class="nav-link">Fleet</li>
+            <li class="nav-link">Cooperation</li>
+            <li class="nav-link">Blog</li>
+          </ul>
+
+          <button
+            class="mt-8 font-medium px-6 py-2 bg-[#B26723] rounded-3xl duration-300 hover:bg-transparent md:hidden"
+          >
+            Login <span><i class="ri-arrow-right-up-long-line"></i></span>
+          </button>
+        </div>
+
+        <h1
+          class="flex justify-center items-center text-3xl font-semibold font-Orbitron cursor-pointer md:w-1/3"
+        >
+          SKYLUXE
+        </h1>
+
+        <div class="md:w-1/3 flex justify-end gap-10 items-end">
+          <button
+            class="hidden md:block mt-8 font-medium px-6 py-2 bg-[#B26723] rounded-3xl duration-300 hover:bg-transparent md:mt-0"
+          >
+            Login <span><i class="ri-arrow-right-up-long-line"></i></span>
+          </button>
+
+          <div
+            class="text-4xl font-semibold cursor-pointer z-10 hidden md:block"
+          >
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+
+        <div class="text-3xl font-semibold cursor-pointer z-30 md:hidden">
+          <i class="ri-menu-3-line" id="menu"></i>
+        </div>
+      </nav>
+
+      <div
+        class="mt-24 text-center md:text-start md:ml-12 md:w-[45%] md:mt-32 header_data"
+      >
+        <h1
+          class="text-4xl font-semibold font-Orbitron md:text-5xl lg:text-6xl leading-snug"
+        >
+          Your Ultimate Private Helicopter Experiance
+        </h1>
+
+        <p class="my-5 font-medium md:w-7/12 md:my-10">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit,
+          soluta. Lorem, ipsum dolor.
+        </p>
+
+        <div
+          class="flex md:gap-5 justify-between items-center md:justify-start w-11/12 mx-auto md:w-auto"
+        >
+          <button
+            class="mt-8 font-medium px-4 md:px-6 py-2 bg-[#B26723] rounded-3xl duration-300 hover:bg-transparent"
+          >
+            Discover More
+            <span><i class="ri-arrow-right-up-long-line"></i></span>
+          </button>
+
+          <button
+            class="mt-8 font-medium px-4 md:px-6 py-2 rounded-3xl duration-300 bg-transparent hover:bg-[#B26723]"
+          >
+            Book Now
+            <span><i class="ri-arrow-right-up-long-line"></i></span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="header_chat flex justify-between gap-3 items-center border w-44 rounded-3xl p-1 px-2 md:p-2 bg-white text-black cursor-pointer duration-300 hover:bg-transparent hover:text-white absolute bottom-3 right-3"
+        id="chatBtn"
+      >
+        <div
+          class="text-2xl font-semibold min-w-12 h-12 border rounded-full flex justify-center items-center text-white bg-black cursor-pointer hover:bg-transparen duration-300"
+          id="chat-icon"
+        >
+          <i class="ri-question-answer-fill"></i>
+        </div>
+        <div class="font-medium">
+          <h1 class="chatTxt" data-set="closed">Start chat with support</h1>
+        </div>
+      </div>
+
+      <div
+        class="absolute top-16 md:top-20 right-3 w-11/12 sm:w-[400px] hidden"
+        id="chatBot"
+      >
+        <div class="chatbot-popup">
+          <div class="chat-header">
+            <div class="header-info">
+              <svg
+                class="logo"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+                ></path>
+              </svg>
+              <h2 class="logo-txt">Chatbot Support</h2>
+            </div>
+          </div>
+
+          <div class="chat-body">
+            <div class="message bot-message">
+              <svg
+                class="bot-avatar"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 1024 1024"
+              >
+                <path
+                  d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+                ></path>
+              </svg>
+              <div class="message-text">
+                Hey there 👋<br />
+                How can i help you?
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-footer">
+            <form action="#" class="chat-form">
+              <textarea
+                class="message-input"
+                placeholder="Message..."
+              ></textarea>
+              <div class="chat-controls">
+                <!-- <button id="emoji-picker">
+                  <i class="ri-user-smile-line" id="emoji-picker"></i>
+                </button> -->
+
+                <div class="file-upload-wrapper">
+                  <input type="file" accept="images/*" id="file-input" hidden />
+                  <img src="#" />
+                  <button type="button" id="file-upload">
+                    <i class="ri-file-line" id="file-upload"></i>
+                  </button>
+
+                  <button type="button" id="file-cancel">
+                    <i class="ri-close-line" id="file-cancel"></i>
+                  </button>
+                </div>
+                <button type="submit" id="send-message">
+                  <i class="ri-arrow-up-line text-lg"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="h-12 bg-[#0B0B0B] z-10 -mt-10 shado"></div>
+
+    <main class="mt-20 shadow-2xl">
+      <section
+        class="min-h-screen flex flex-col justify-center items-center w-full"
+      >
+        <div
+          class="nav_data2 flex flex-col justify-between items-center text-center lg:flex-row lg:text-start w-11/12 mx-auto lg:items-start"
+        >
+          <h1
+            class="text-4xl font-semibold font-Orbitron md:text-5xl leading-snug lg:w-1/2"
+          >
+            Experiance the freedom of the skies with skyluxe.
+          </h1>
+
+          <div class="lg:w-1/3">
+            <p class="text-gray-400 py-5">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, optio.
+            </p>
+            <button class="btn">
+              Book Now
+              <span><i class="ri-arrow-right-up-long-line"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="right_data swiper my-6 md:mt-20 w-[96%] mx-auto md:w-full">
+          <div class="swiper-wrapper space-x-1 lg:h-[50vh] md:pl-4">
+            <div class="swiper-slide">
+              <div
+                class="sm:max-w-96 w-full border flex flex-col justify-center items-center p-2 px-3 rounded-xl bg-[#151515] border-[#484848] mt-10 md:mt-20 cursor-pointer lg:max-w-[43rem] lg:flex-row lg:justify-between lg:gap-10"
+              >
+                <div class="w-full h-72 lg:h-60">
+                  <img
+                    src="assets/helicopter-flying-city-with-city-background_1255033-11919.jpg"
+                    alt=""
+                    class="sm:max-w-96 w-full h-72 lg:h-60 object-cover rounded-xl"
+                  />
+                </div>
+
+                <div class="py-5 lg:pt-2">
+                  <h1 class="text-3xl font-semibold font-Orbitron">
+                    Private Charter
+                  </h1>
+
+                  <p class="text-gray-300 my-6">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic et deleniti iste aperiam eveniet!
+                  </p>
+
+                  <button class="btn">
+                    Book Now
+                    <span><i class="ri-arrow-right-up-long-line"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div
+                class="sm:max-w-96 w-full border flex flex-col justify-center items-center p-2 px-3 rounded-xl bg-[#151515] border-[#484848] mt-10 md:mt-20 cursor-pointer lg:max-w-[43rem] lg:flex-row lg:justify-between lg:gap-10"
+              >
+                <div class="w-full h-72 lg:h-60">
+                  <img
+                    src="assets/helicopter_flying_city_sunset_perfect_travel_transportation_concepts.jpg"
+                    alt=""
+                    class="sm:max-w-96 w-full h-72 lg:h-60 object-cover rounded-xl"
+                  />
+                </div>
+
+                <div class="py-5 lg:pt-2">
+                  <h1 class="text-3xl font-semibold font-Orbitron">
+                    Scenic Charter
+                  </h1>
+
+                  <p class="text-gray-300 my-6">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic et deleniti iste aperiam eveniet!
+                  </p>
+
+                  <button class="btn">
+                    Book Now
+                    <span><i class="ri-arrow-right-up-long-line"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div
+                class="sm:max-w-96 w-full border flex flex-col justify-center items-center p-2 px-3 rounded-xl bg-[#151515] border-[#484848] mt-10 md:mt-20 cursor-pointer lg:max-w-[43rem] lg:flex-row lg:justify-between lg:gap-10"
+              >
+                <div class="w-full h-72 lg:h-60">
+                  <img
+                    src="assets/Eurocopter-helicoptere-signe-Hermes.jpg"
+                    alt=""
+                    class="sm:max-w-96 w-full h-72 lg:h-60 object-cover rounded-xl"
+                  />
+                </div>
+
+                <div class="py-5 lg:pt-2">
+                  <h1 class="text-3xl font-semibold font-Orbitron">
+                    Private Charter
+                  </h1>
+
+                  <p class="text-gray-300 my-6">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic et deleniti iste aperiam eveniet!
+                  </p>
+
+                  <button class="btn">
+                    Book Now
+                    <span><i class="ri-arrow-right-up-long-line"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div
+                class="sm:max-w-96 w-full border flex flex-col justify-center items-center p-2 px-3 rounded-xl bg-[#151515] border-[#484848] mt-10 md:mt-20 cursor-pointer lg:max-w-[43rem] lg:flex-row lg:justify-between lg:gap-10"
+              >
+                <div class="w-full h-72 lg:h-60">
+                  <img
+                    src="assets/helicopter-flying-city-with-city-background_1255033-11919.jpg"
+                    alt=""
+                    class="sm:max-w-96 w-full h-72 lg:h-60 object-cover rounded-xl"
+                  />
+                </div>
+
+                <div class="py-5 lg:pt-2">
+                  <h1 class="text-3xl font-semibold font-Orbitron">
+                    Private Charter
+                  </h1>
+
+                  <p class="text-gray-300 my-6">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Hic et deleniti iste aperiam eveniet!
+                  </p>
+
+                  <button class="btn">
+                    Book Now
+                    <span><i class="ri-arrow-right-up-long-line"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full sm:max-w-96 h-1 bg-gray-900 rounded-md overflow-hidden md:ml-10"
+          >
+            <div class="tube"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="min-h-screen flex flex-col justify-center gap-20 items-center w-11/12 mx-auto mt-10 md:mt-20"
+      >
+        <div
+          class="nav_data2 flex flex-col justify-between items-center text-center lg:flex-row lg:text-start w-full lg:items-start"
+        >
+          <h1
+            class="text-4xl font-semibold font-Orbitron md:text-5xl leading-snug lg:w-1/2"
+          >
+            Experiance the freedom of the skies with skyluxe.
+          </h1>
+
+          <div class="lg:w-1/3">
+            <p class="text-gray-400 py-5">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, optio.
+            </p>
+            <button class="btn">
+              Book Now
+              <span><i class="ri-arrow-right-up-long-line"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="left_data w-full flex flex-col gap-10 md:gap-10 justify-between items-center md:flex-row"
+        >
+          <div class="md:w-1/2">
+            <div class="h-96 relative">
+              <img
+                src="assets/white helicopter.jpg"
+                alt=""
+                class="object-cover w-full h-full rounded-2xl"
+              />
+              <div class="absolute bottom-3 left-3 z-10">
+                <h1 class="text-3xl font-semibold text-black font-Orbitron">
+                  CRH 29M
+                </h1>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center my-5">
+              <h1 class="text-2xl font-semibold">$990/hour</h1>
+              <button class="btn">
+                Book Now
+                <span><i class="ri-arrow-right-up-long-line"></i></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <div class="h-96 relative rounded-2xl bg-[#383838]">
+              <img
+                src="assets/black.png"
+                alt=""
+                class="object-cover w-full h-full rounded-2xl"
+              />
+              <div class="absolute bottom-3 left-3 z-10">
+                <h1 class="text-3xl font-semibold text-white font-Orbitron">
+                  CRH 28
+                </h1>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center my-5">
+              <h1 class="text-2xl font-semibold">$990/hour</h1>
+              <button class="btn">
+                Book Now
+                <span><i class="ri-arrow-right-up-long-line"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="min-h-screen flex flex-col justify-center items-center">
+        <div class="left_data w-full relative">
+          <img
+            src="assets/helicopter_flying_city_sunset_perfect_travel_transportation_concepts.jpg"
+            class="w-full h-[27rem] object-cover"
+          />
+
+          <div class="text-center absolute top-10 lg:top-20">
+            <h1
+              class="text-3xl font-semibold font-Orbitron md:text-5xl leading-snug mb-8 md:w-8/12 mx-auto"
+            >
+              Ready to elevate your travel experiance? Contact us today to book
+              your private charter.
+            </h1>
+
+            <button
+              class="font-medium px-6 py-2 rounded-3xl duration-300 bg-transparent border"
+            >
+              Book Now
+              <span><i class="ri-arrow-right-up-long-line"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="right_data scroll mt-20 md:mt-40" style="--t: 100s">
+          <div
+            class="parent flex w-full justify-center md:justify-between items-center gap-5"
+          >
+            <div class="child h-40 w-40 md:w-56 md:h-56">
+              <img src="assets/logo1.png" class="h-40 w-40" />
+            </div>
+
+            <div class="child h-40 w-40 md:w-56 md:h-56">
+              <img src="assets/logo3.png" class="h-40 w-40" />
+            </div>
+
+            <div class="child h-40 w-40 md:w-56 md:h-56">
+              <img src="assets/logo4.png" class="h-40 w-40" />
+            </div>
+
+            <div class="child h-40 w-40 md:w-56 md:h-56">
+              <img src="assets/logo3.png" class="h-40 w-40" />
+            </div>
+
+            <div class="child h-40 w-40 md:w-56 md:h-56">
+              <img src="assets/logo1.png" class="h-40 w-40" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scale_down min-h-screen flex flex-col justify-evenly items-center w-11/12 mx-auto mt-10 md:mt-20"
+      >
+        <div
+          class="flex flex-col justify-between items-center text-center lg:flex-row lg:text-start w-full lg:items-start"
+        >
+          <h1
+            class="text-4xl font-semibold font-Orbitron md:text-5xl leading-snug lg:w-1/2"
+          >
+            Why choose SkyLuxe private charters?
+          </h1>
+
+          <div class="lg:w-1/3">
+            <p class="text-gray-400 py-5">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam, optio.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-10 lg:gap-3 items-center">
+          <div class="p-5 rounded-xl sm:w-80 bg-[#B26723]">
+            <div
+              class="h-12 w-12 cursor-pointer border rounded-full flex justify-center items-center text-2xl font-semibold"
+            >
+              <i class="ri-safe-line"></i>
+            </div>
+
+            <h1 class="text-2xl font-semibold my-4">Luxury</h1>
+
+            <p class="text-gray-200">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              nostrum mollitia dolores quasi vitae!
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl sm:w-80 bg-[#151515]">
+            <div
+              class="h-12 w-12 cursor-pointer border rounded-full flex justify-center items-center text-2xl font-semibold"
+            >
+              <i class="ri-safe-line"></i>
+            </div>
+
+            <h1 class="text-2xl font-semibold my-4">Luxury</h1>
+
+            <p class="text-gray-200">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              nostrum mollitia dolores quasi vitae!
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl sm:w-80 bg-[#B26723]">
+            <div
+              class="h-12 w-12 cursor-pointer border rounded-full flex justify-center items-center text-2xl font-semibold"
+            >
+              <i class="ri-safe-line"></i>
+            </div>
+
+            <h1 class="text-2xl font-semibold my-4">Luxury</h1>
+
+            <p class="text-gray-200">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              nostrum mollitia dolores quasi vitae!
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl sm:w-80 bg-[#151515]">
+            <div
+              class="h-12 w-12 cursor-pointer border rounded-full flex justify-center items-center text-2xl font-semibold"
+            >
+              <i class="ri-safe-line"></i>
+            </div>
+
+            <h1 class="text-2xl font-semibold my-4">Luxury</h1>
+
+            <p class="text-gray-200">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              nostrum mollitia dolores quasi vitae!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="nav_data2 text-center w-11/12 mx-auto md:flex justify-between md:text-start my-20"
+      >
+        <div class="md:w-1/2">
+          <h1 class="text-4xl font-semibold font-Orbitron md:text-5xl">
+            Be part of the journey
+          </h1>
+
+          <p class="my-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Praesentium, ex?
+          </p>
+        </div>
+
+        <div class="md:w-1/3">
+          <form
+            action=""
+            class="h-12 rounded-[5rem] py px-1 border bg-[#151515] flex justify-between items-center"
+          >
+            <input
+              type="email"
+              required
+              placeholder="Email.."
+              class="text-lg outline-none px-1 bg-[#151515] text-white w-1/2"
+            />
+            <button
+              class="border text-lg font-semibold px-3 py-1.5 bg-white text-black duration-300 cursor-pointer hover:bg-transparent hover:text-white rounded-[5rem]"
+            >
+              Subscribe <span><i class="ri-arrow-right-line"></i></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer_data mt-12 bg-black w-full">
+      <div
+        class="w-11/12 mx-auto flex flex-col justify-center items-center md:flex-row md:justify-between md:items-start my-6 py-5 md:py-10 text-white gap-4 md:gap-14 md:my-16"
+      >
+        <div
+          class="flex flex-col justify-center items-center md:items-start md:w-1/2"
+        >
+          <h1
+            class="flex justify-center items-center text-3xl font-semibold font-Orbitron cursor-pointer md:w-1/3"
+          >
+            SKYLUXE
+          </h1>
+
+          <p class="text-white text-center my-5 md:text-start md:w-10/12">
+            Sufficient particular impossible by reasonable oh expression is. Yet
+            preference unpleasant.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center gap-5 md:gap-10 text-center md:flex-row md:justify-between md:w-1/2"
+        >
+          <div>
+            <h1 class="text-2xl font-semibold mb-5">Menu</h1>
+
+            <ul class="flex flex-col gap-3">
+              <li>Donations</li>
+              <li>Features</li>
+              <li>Category</li>
+              <li>Volunteer</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+
+          <div>
+            <h1 class="text-2xl font-semibold mb-5">Menu</h1>
+
+            <ul class="flex flex-col gap-3">
+              <li>Donations</li>
+              <li>Features</li>
+              <li>Category</li>
+              <li>Volunteer</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+
+          <div>
+            <h1 class="text-2xl font-semibold mb-5">Menu</h1>
+
+            <ul class="flex flex-col gap-3">
+              <li>Donations</li>
+              <li>Features</li>
+              <li>Category</li>
+              <li>Volunteer</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-5 mx-auto text-white font-semibold text-center border-t-2">
+        © Copyright
+        <a
+          href="https://t.me/devnerd0"
+          target="_blank"
+          class="text-[#B26723] font-bold cursor-pointer"
+          >DevNerd</a
+        >
+        <a
+          href="https://t.me/devnerdguy"
+          target="_blank"
+          class="font-extrabold cursor-pointer"
+          >(Roobi)</a
+        >.. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
